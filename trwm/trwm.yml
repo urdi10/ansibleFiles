@@ -1,0 +1,16 @@
+- name: MEAN Stack Playbook
+  hosts: nodes
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  vars:
+    temp_folder: /tmp
+  tasks:
+    # Install MongoDB
+    - include: tasks/mongodb.yml
+
+    # Install Node.js
+    - include: tasks/nodejs.yml
+
+    # Install Express
+    - include: tasks/express.yml

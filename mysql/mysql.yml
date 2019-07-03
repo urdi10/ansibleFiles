@@ -1,4 +1,6 @@
 - name: MySQL Playbook
   hosts: dbserver
+  become: yes
+  become_method: sudo
   roles:
     - geerlingguy.mysql
